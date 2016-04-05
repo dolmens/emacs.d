@@ -7,3 +7,5 @@ smex-items
 ac-comphist.dat
 ido.last
 .mc-lists.el
+/pcache
+/var

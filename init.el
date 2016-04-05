@@ -118,6 +118,12 @@
   ;; disable ido faces to see flx highlights
   (setq ido-use-faces nil))
 
+;; which-key for help with key bindings - https://github.com/justbur/emacs-which-key
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode +1))
+
 ;; paredit for s-expression editing - https://www.emacswiki.org/emacs/ParEdit
 (use-package paredit
   :ensure t
@@ -127,7 +133,9 @@
   (add-hook 'lisp-interaction-mode-hook #'paredit-mode)
   (add-hook 'ielm-mode-hook #'paredit-mode)
   (add-hook 'lisp-mode-hook #'paredit-mode)
-  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode))
+  (add-hook 'eval-expression-minibuffer-setup-hook #'paredit-mode)
+  ;; easier for in-REPL code typing
+  (define-key paredit-mode-map (kbd "M-RET") 'paredit-newline))
 
 ;; rainbow delimiters - https://github.com/jlr/rainbow-delimiters
 (use-package rainbow-delimiters
@@ -203,6 +211,10 @@
 
 ;; YAML mode https://github.com/yoshiki/yaml-mode
 (use-package yaml-mode
+  :ensure t)
+
+;; gist mode - https://github.com/defunkt/gist.el
+(use-package gist
   :ensure t)
 
 ;; coffee script mode - https://github.com/defunkt/coffee-mode
