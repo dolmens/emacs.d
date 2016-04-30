@@ -201,9 +201,9 @@
   :ensure t
   :config
   (global-set-key (kbd "C-x c") 'mc/edit-lines)
-  (global-set-key (kbd "M-p") 'mc/mark-next-like-this)
-  (global-set-key (kbd "M-n") 'mc/mark-previous-like-this)
-  (global-set-key (kbd "C-x x") 'mc/mark-all-like-this))
+  (global-set-key (kbd "C-x x") 'mc/mark-all-like-this)
+  (global-set-key (kbd "M-p") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "M-n") 'mc/mark-next-like-this))
 
 ;; markdown mode - http://jblevins.org/projects/markdown-mode/
 (use-package markdown-mode
