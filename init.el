@@ -124,6 +124,13 @@
   :config
   (which-key-mode +1))
 
+;; expand region for region selection by semantic units - https://github.com/magnars/expand-region.el
+(use-package expand-region
+  :ensure t
+  :config
+  (global-set-key (kbd "M-SPC") 'er/expand-region)
+  (which-key-mode +1))
+
 ;; paredit for s-expression editing - https://www.emacswiki.org/emacs/ParEdit
 (use-package paredit
   :ensure t
