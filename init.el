@@ -104,11 +104,12 @@
 	ido-auto-merge-work-directories-length nil)
   (ido-mode t))
 
-;; ido-ubiuitous - https://github.com/DarwinAwardWinner/ido-ubiquitous
-(use-package ido-ubiquitous
+;; ido-completing-read+ - https://github.com/DarwinAwardWinner/ido-completing-read-plus
+(use-package ido-completing-read+
   :ensure t
   :config
-  (ido-ubiquitous-mode +1))
+  (ido-everywhere 1)
+  (ido-ubiquitous-mode 1))
 
 ;; flx-ido - https://github.com/lewang/flx
 (use-package flx-ido
