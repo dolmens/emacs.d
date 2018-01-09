@@ -261,4 +261,17 @@
 (use-package projectile
   :ensure t
   :config
-  (projectile-global-mode))
+  (projectile-global-mode)
+  (add-hook 'prog-mode-hook 'projectile-mode))
+
+;; turn flyspell on
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+;; start up text-mode instead of fundamental
+(set-default 'major-mode 'text-mode)
+
+;; Highlight BUG FIXME TODO NOTE keywords in the source code.
+(add-hook 'find-file-hook
+		  (lambda()
+			(highlight-phrase "\\(BUG\\|FIXME\\|TODO\\|NOTE\\):")))
